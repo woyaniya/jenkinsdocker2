@@ -2,8 +2,8 @@ image_version=`date +%Y%m%d%H%M`;
 echo $image_version;
 
 git pull --rebase origin master;
-docker stop jenkinsdocker2;
-docker rm jenkinsdocker2;
+#docker stop jenkinsdocker2;
+#docker rm jenkinsdocker2;
 docker build -t jenkinsdocker2:$image_version .;
 docker images;
 docker run -p 10001:80 -d --name jenkinsdocker2 jenkinsdocker2:$image_version;
